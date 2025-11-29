@@ -1,8 +1,8 @@
-laravel-admin-ext/backup
+ladmin-ext-backup
 ========================
 
-[![Packagist](https://img.shields.io/packagist/l/laravel-admin-ext/backup.svg?maxAge=2592000)](https://packagist.org/packages/laravel-admin-ext/backup)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-admin-ext/backup.svg?style=flat-square)](https://packagist.org/packages/laravel-admin-ext/backup)
+[![Packagist](https://img.shields.io/packagist/l/php-panel/ladmin-ext-backup.svg?maxAge=2592000)](https://packagist.org/packages/php-panel/ladmin-ext-backup)
+[![Total Downloads](https://img.shields.io/packagist/dt/php-panel/ladmin-ext-backup.svg?style=flat-square)](https://packagist.org/packages/php-panel/ladmin-ext-backup)
 
 An admin interface for managing backups, inspired by https://github.com/laravel-backpack/backupmanager.
 
@@ -15,7 +15,7 @@ An admin interface for managing backups, inspired by https://github.com/laravel-
 > Before installing this package, you must install [laravel-backup](https://github.com/spatie/laravel-backup) and complete the configuration.
 
 ```
-$ composer require laravel-admin-ext/backup -vvv
+$ composer require php-panel/ladmin-ext-backup -vvv
 
 $ php artisan admin:import backup
 ```
@@ -24,4 +24,4 @@ Open `http://your-host/admin/backup`.
 
 License
 ------------
-Licensed under [The MIT License (MIT)](LICENSE).
+Licensed under [The Apacle 2.0 License](LICENSE).

@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Backup;
+namespace Ladmin\Backup;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;

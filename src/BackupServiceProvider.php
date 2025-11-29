@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Backup;
+namespace Ladmin\Backup;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class BackupServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-admin-backup');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-admin-backup');
 
         Backup::boot();
     }

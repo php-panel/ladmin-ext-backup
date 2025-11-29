@@ -1,12 +1,13 @@
 <?php
 
-namespace Encore\Admin\Backup;
+namespace Ladmin\Backup;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Extension;
+use Ladmin\Admin;
+use Ladmin\Extension;
 use Spatie\Backup\Commands\ListCommand;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
+use Spatie\Backup\Config\Config;
 
 class Backup extends Extension
 {
@@ -14,7 +15,7 @@ class Backup extends Extension
     {
         $statuses = BackupDestinationStatusFactory::createForMonitorConfig(config('backup.monitor_backups'));
 
-        $listCommand = new ListCommand();
+        $listCommand = new ListCommand(Config::fromArray(config('backup')));
 
         $rows = $statuses->map(function (BackupDestinationStatus $backupDestinationStatus) use ($listCommand) {
             return $listCommand->convertToRow($backupDestinationStatus);
@@ -52,10 +53,10 @@ class Backup extends Extension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('backup', 'Encore\Admin\Backup\BackupController@index')->name('backup-list');
-            $router->get('backup/download', 'Encore\Admin\Backup\BackupController@download')->name('backup-download');
-            $router->post('backup/run', 'Encore\Admin\Backup\BackupController@run')->name('backup-run');
-            $router->delete('backup/delete', 'Encore\Admin\Backup\BackupController@delete')->name('backup-delete');
+            $router->get('backup', 'Ladmin\Backup\BackupController@index')->name('backup-list');
+            $router->get('backup/download', 'Ladmin\Backup\BackupController@download')->name('backup-download');
+            $router->post('backup/run', 'Ladmin\Backup\BackupController@run')->name('backup-run');
+            $router->delete('backup/delete', 'Ladmin\Backup\BackupController@delete')->name('backup-delete');
         });
     }
 
